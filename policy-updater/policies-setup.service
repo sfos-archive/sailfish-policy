@@ -1,0 +1,7 @@
+[Unit]
+Description=Setup policies
+After=init-done.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/policy-updater

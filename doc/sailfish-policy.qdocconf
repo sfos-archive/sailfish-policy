@@ -1,0 +1,58 @@
+project         = Sailfish OS MDM Policy Framework
+description     = Sailfish OS MDM Policy Framework Reference Documentation
+versionsym      =
+version         = 1.0.0
+url             = https://bitbucket.org/jolla/base-sailfish-policy/
+
+sourcedirs += $$PWD/../libsailfishpolicy $$PWD/../doc
+headerdirs += $$PWD/../libsailfishpolicy
+
+outputformats = HTML
+outputdir = $$PWD/../doc/html
+base = file:$$PWD/../doc/html
+tagfile = $$PWD/../doc/html/sailfish-policy.tags
+
+outputprefixes = QML
+outputprefixes.QML = qml-sailfishpolicy-
+
+qhp.projects = SailfishPolicy
+
+qhp.SailfishPolicy.file = sailfish-policy.qhp
+qhp.SailfishPolicy.namespace = org.sailfishos.policy.1.0.0
+qhp.SailfishPolicy.virtualFolder = sailfish-policy
+qhp.SailfishPolicy.indexTitle = Sailfish OS MDM Policy Framework
+qhp.SailfishPolicy.indexRoot =
+
+qhp.SailfishPolicy.filterAttributes = sailfish-policy 1.0.0
+qhp.SailfishPolicy.customFilters.SailfishPolicy.name = Sailfish OS MDM Policy 1.0.0
+qhp.SailfishPolicy.customFilters.SailfishPolicy.filterAttributes = sailfish-policy 1.0.0
+
+qhp.SailfishPolicy.subprojects        = overview qmltypes classes
+
+qhp.SailfishPolicy.subprojects.overview.title = Sailfish OS MDM Policy Framework
+qhp.SailfishPolicy.subprojects.overview.indexTitle = Sailfish OS MDM Policy Framework
+qhp.SailfishPolicy.subprojects.overview.type = manual
+
+qhp.SailfishPolicy.subprojects.qmltypes.title = QML Types
+qhp.SailfishPolicy.subprojects.qmltypes.indexTitle = Sailfish.Policy QML Types
+qhp.SailfishPolicy.subprojects.qmltypes.selectors = qmlmodule:Sailfish.Policy
+qhp.SailfishPolicy.subprojects.qmltypes.sortPages = true
+
+qhp.SailfishPolicy.subprojects.classes.title = C++ Classes
+qhp.SailfishPolicy.subprojects.classes.indexTitle = Sailfish MDM Policy C++ Classes
+qhp.SailfishPolicy.subprojects.classes.selectors = class fake:headerfile
+qhp.SailfishPolicy.subprojects.classes.sortPages = true
+
+HTML.footer += \
+    "<div class=\"footer\">\n" \
+    "  <p><acronym title=\"Copyright\">&copy;</acronym> 2017-2019 Jolla Ltd.</p>\n" \
+    "  <p><acronym title=\"Copyright\">&copy;</acronym> 2019 Open Mobile Platform LLC.</p>\n" \
+    "  <p>All other trademarks are property of their respective owners.</p>\n" \
+    "  <p>\n" \
+    "    This document may be used under the terms of the " \
+    "    <a href=\"http://www.gnu.org/licenses/fdl.html\">GNU Free Documentation License version 1.3</a>" \
+    "    as published by the Free Software Foundation." \
+    "  </p>\n" \
+    "</div>\n"
+
+navigation.homepage = "Sailfish OS MDM Policy Framework"

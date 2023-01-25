@@ -1,0 +1,77 @@
+/****************************************************************************************
+**
+** Copyright (C) 2017 - 2019 Jolla Ltd.
+** Copyright (C) 2019 Open Mobile Platform LLC.
+** Contact: Chris Adams <chris.adams@jollamobile.com>
+** All rights reserved.
+**
+****************************************************************************************/
+
+/*!
+\page index.html
+\title Sailfish OS MDM Policy Framework
+
+Mobile device management (MDM) is an important requirement for many use cases,
+allowing the functionality of a particular device or fleet of devices to be
+restricted or controlled in a variety of ways or in response to certain events
+(e.g. in the case of a lost or stolen device).
+
+Sailfish OS provides the Sailfish OS MDM Framework to allow permitted MDM
+applications to apply restrictive policies or to manually enable, disable, or
+trigger specific functionality on the device.
+
+Disclaimer! The 2nd party API provided by MDM Framework is still in active
+development and to some extent subject to change. Normal 3rd party API backward
+compatibility promises don't hold.
+Follow \l{https://forum.sailfishos.org/}{Sailfish OS Forum} release notes to get
+notified of API changes.
+
+\section1 Using the Sailfish OS MDM Framework
+
+There are two separate facets to the Sailfish OS MDM Framework. The first
+facet consists of policies which define whether the user can modify certain
+settings or access certain functionality, and is provided by libsailfishpolicy.
+The second facet consists of specific system functionality which is offered
+to MDM applications but may or may not be available via other system APIs, and
+this functionality is provided by libsailfishmdm.
+
+To use these libraries, the MDM application should use the pkgconfig files
+"sailfishpolicy.pc" and "sailfishmdm.pc" respectively.
+
+e.g. in a qmake-based project:
+
+\code
+CONFIG += link_pkgconfig
+PKGCONFIG += sailfishpolicy sailfishmdm
+\endcode
+
+\section2 Sailfish OS Policy API
+
+The Sailfish OS Policy API allows the MDM application to write the current
+policies defined for specific settings or functionality.
+For example, the MDM application may want to prevent the user from changing the
+GPS settings.
+
+There are some well-defined policy types which are fully implemented by
+libsailfishpolicy (that is, setting a policy value for one of these types will
+result in specific side-effects occurring on device which enforce the policy).
+These policy types are exposed via the \l{Sailfish::PolicyValue} class, with
+the \l{Sailfish::AccessPolicy} providing convenience API. The 
+\l{Sailfish::AccessPolicyPlugin} interface exists for writing access policy
+control plugins.
+
+*/
+
+/*!
+\qmlmodule Sailfish.Policy 1.0
+\title Sailfish.Policy QML Types
+
+This module includes the following types:
+
+*/
+
+/*!
+\module SailfishPolicy
+\title Sailfish MDM Policy C++ Classes
+
+*/
