@@ -2,8 +2,8 @@ Name:       sailfish-policy
 Summary:    Sailfish MDM Policy library
 Version:    0.3.23
 Release:    1
-License:    Proprietary
-URL:        https://bitbucket.org/jolla/base-sailfish-policy
+License:    BSD
+URL:        https://github.com/sailfishos/sailfish-policy
 Source0:    %{name}-%{version}.tar.bz2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
@@ -77,6 +77,7 @@ cp -R doc/html/* %{buildroot}/%{_docdir}/%{name}/
 
 %files
 %defattr(-,root,root,-)
+%license LICENSE.BSD
 %attr(4754, root, sailfish-mdm) %{_libexecdir}/policy-updater
 %{_unitdir}/policies-setup.service
 %{_unitdir}/multi-user.target.wants/policies-setup.service
