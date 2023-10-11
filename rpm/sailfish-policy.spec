@@ -14,7 +14,7 @@ BuildRequires:  pkgconfig(libshadowutils)
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(ohm-ext-mdm)
 BuildRequires:  pkgconfig(usb_moded)
-BuildRequires:  systemd
+BuildRequires:  pkgconfig(systemd)
 Requires(pre): shadow-utils
 Requires(pre): sailfish-setup
 Requires:  ohm-plugin-mdm
